@@ -1,18 +1,14 @@
 // at the top of your component file
 
-import { fetchEntries } from "../util/contentfulPosts";
-import Post from "../components/Posts";
+import { fetchEntries } from "../util/contentfulQuery";
 
 //
 
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ posts }) {
+  console.log(posts);
+
   return (
     <>
       <Head>
@@ -21,35 +17,7 @@ export default function Home({ posts }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className="posts">
-          {posts.map((p) => {
-            return (
-              <Post
-                key={p.date}
-                date={p.date}
-                image={p.image.fields}
-                title={p.title}
-              />
-            );
-          })}
-        </div>
-      </main>
+      <main></main>
     </>
   );
-}
-
-// at the bottom of your component file
-
-export async function getStaticProps() {
-  const res = await fetchEntries();
-  const posts = await res.map((p) => {
-    return p.fields;
-  });
-
-  return {
-    props: {
-      posts,
-    },
-  };
 }
