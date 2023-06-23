@@ -12,7 +12,6 @@ const style = {
   },
   headingsContainer: {
     marginBottom: "24px",
-    maxWidth: { md: "250px" },
   },
   infoSpecsContainer: {
     flexDirection: "column",
