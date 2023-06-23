@@ -4,7 +4,7 @@ import fetchEntries from "@/util/contentfulQuery";
 import fetchAsset from "@/util/contentfulAsset";
 import ProjectInfo from "@/src/layouts/ProjectInfo";
 
-const Project = ({ logoUrl, projectInfo, paths }) => {
+const Project = ({ logoUrl, projectInfo }) => {
   return <ProjectInfo logoUrl={logoUrl} projectInfo={projectInfo[0]} />;
 };
 

@@ -8,12 +8,13 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Head from "next/head";
 
 const ProjectInfo = ({ logoUrl, projectInfo }) => {
+
   console.log(projectInfo);
 
   return (
     <>
     <Head>
-      <title>{projectInfo.title} | La Vulcanizadora</title>
+      <title>{`${projectInfo.title} | La Vulcanizadora`}</title>
     </Head>
       <Flex {...style.mainContainer}>
         <Logo logoUrl={logoUrl} />
