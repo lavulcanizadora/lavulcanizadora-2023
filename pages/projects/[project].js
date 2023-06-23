@@ -13,7 +13,14 @@ Project.propTypes = {
   logoUrl: PropTypes.string.isRequired
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticPaths = async() => {
+  return {
+    paths: [],
+    fallback: false
+  };
+};
+
+export const getStaticProps = async (context) => {
   // Traer info del proyecto
 
   const res = await fetchEntries({
