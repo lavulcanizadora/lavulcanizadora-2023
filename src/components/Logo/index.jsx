@@ -6,7 +6,7 @@ import style from "./style.js";
 const Logo = ({ logoUrl }) => {
   return (
     <Flex {...style.container}>
-      <Image src={logoUrl} alt="Logo La Vulcanizadora" />
+      <Image src={logoUrl} alt="Logo La Vulcanizadora" {...style.logo} />
     </Flex>
   );
 };
