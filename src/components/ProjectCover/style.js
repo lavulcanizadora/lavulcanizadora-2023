@@ -1,7 +1,7 @@
 const style = {
   projectContainer: {
     width: { base: "100%", md: "45%" },
-    height: { base: "calc((100vw - 10px) * 0.6)", md: "35vh" },
+    aspectRatio: "7 / 4",
     alignItems: "center",
     justifyContent: "center",
     backgroundSize: "cover",

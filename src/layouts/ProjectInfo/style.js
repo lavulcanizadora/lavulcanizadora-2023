@@ -1,7 +1,7 @@
 const style = {
   mainContainer: {
     flexDirection: { base: "column", md: "row" },
-    padding: { md: "32px 72px" },
+    padding: { md: "60px" },
     alignItems: { md: "flex-start" },
     gap: { md: "50px" },
     justifyContent: { md: "space-around" },
