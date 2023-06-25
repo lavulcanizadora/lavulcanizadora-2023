@@ -5,7 +5,6 @@ import fetchAsset from "@/util/contentfulAsset";
 import ProjectList from "@/src/layouts/ProjectList";
 
 const Project = ({ logoUrl, projectList }) => {
-  console.log(projectList);
 
   return <ProjectList logoUrl={logoUrl} projectList={projectList} />;
 };

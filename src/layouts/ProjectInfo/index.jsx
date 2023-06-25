@@ -9,8 +9,6 @@ import Head from "next/head";
 
 const ProjectInfo = ({ logoUrl, projectInfo }) => {
 
-  console.log(projectInfo);
-
   return (
     <>
     <Head>

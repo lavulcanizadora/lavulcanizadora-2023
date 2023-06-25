@@ -7,7 +7,6 @@ import { fetchEntries } from "../util/contentfulQuery";
 import Head from "next/head";
 
 export default function Home({ posts }) {
-  console.log(posts);
 
   return (
     <>
