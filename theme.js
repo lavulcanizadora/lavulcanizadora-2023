@@ -3,7 +3,7 @@ import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
   styles: {
     global: {
-      ".project-description": {
+      ".body-text": {
         b: {
           fontFamily: "'Mulish', sans-serif",
           fontWeight: "900",

@@ -16,7 +16,7 @@ const ProjectCover = ({ projectInfo }) => {
         {...style.projectContainer}
         backgroundImage={`url(${projectInfo.projectCover})`}
       >
-        <Heading {...style.projectHeading}>{projectInfo.projectName}</Heading>
+        <Heading as="h2" {...style.projectHeading}>{projectInfo.projectName}</Heading>
       </Flex>
     </Link>
   );

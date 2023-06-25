@@ -2,18 +2,17 @@ import React from "react";
 import Logo from "@/src/components/Logo";
 import Carousel from "@/src/components/Carousel";
 import PropTypes from "prop-types";
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import style from "./style";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Head from "next/head";
 
 const ProjectInfo = ({ logoUrl, projectInfo }) => {
-
   return (
     <>
-    <Head>
-      <title>{`${projectInfo.title} | La Vulcanizadora`}</title>
-    </Head>
+      <Head>
+        <title>{`${projectInfo.title} | La Vulcanizadora`}</title>
+      </Head>
       <Flex {...style.mainContainer}>
         <Logo logoUrl={logoUrl} />
         <Flex {...style.infoContainer}>
@@ -40,7 +39,7 @@ const ProjectInfo = ({ logoUrl, projectInfo }) => {
                 },
               })}
             </Flex>
-            <Flex {...style.projectDescription} className="project-description">
+            <Flex {...style.projectDescription} className="body-text">
               {documentToReactComponents(projectInfo.description, {
                 renderText: (text) => {
                   return text
