@@ -6,6 +6,7 @@ import style from "./style";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import ProjectCover from "@/src/components/ProjectCover";
+import MobileMenu from "@/src/components/MobileMenu";
 
 const ProjectList = ({ logoUrl, projectList }) => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const ProjectList = ({ logoUrl, projectList }) => {
           router.locale === "en" ? "Projects" : "Proyectos"
         } | La Vulcanizadora`}</title>
       </Head>
+      <MobileMenu />
       <Flex {...style.mainContainer}>
         <Logo logoUrl={logoUrl} />
         <Flex {...style.listContainer}>
