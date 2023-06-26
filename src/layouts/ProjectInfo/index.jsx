@@ -2,10 +2,12 @@ import React from "react";
 import Logo from "@/src/components/Logo";
 import Carousel from "@/src/components/Carousel";
 import PropTypes from "prop-types";
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, Hide } from "@chakra-ui/react";
 import style from "./style";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Head from "next/head";
+import MobileMenu from "@/src/components/MobileMenu";
+import DesktopMenu from "@/src/components/DesktopMenu";
 
 const ProjectInfo = ({ logoUrl, projectInfo }) => {
   return (
@@ -13,6 +15,9 @@ const ProjectInfo = ({ logoUrl, projectInfo }) => {
       <Head>
         <title>{`${projectInfo.title} | La Vulcanizadora`}</title>
       </Head>
+      <Hide above="md">
+        <MobileMenu />
+      </Hide>
       <Flex {...style.mainContainer}>
         <Logo logoUrl={logoUrl} />
         <Flex {...style.infoContainer}>
@@ -57,6 +62,7 @@ const ProjectInfo = ({ logoUrl, projectInfo }) => {
           </Flex>
         </Flex>
       </Flex>
+      <DesktopMenu />
     </>
   );
 };

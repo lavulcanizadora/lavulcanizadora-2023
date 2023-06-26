@@ -1,12 +1,13 @@
 import React from "react";
 import Logo from "@/src/components/Logo";
 import PropTypes from "prop-types";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Hide } from "@chakra-ui/react";
 import style from "./style";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import ProjectCover from "@/src/components/ProjectCover";
 import MobileMenu from "@/src/components/MobileMenu";
+import DesktopMenu from "@/src/components/DesktopMenu";
 
 const ProjectList = ({ logoUrl, projectList }) => {
   const router = useRouter();
@@ -18,7 +19,9 @@ const ProjectList = ({ logoUrl, projectList }) => {
           router.locale === "en" ? "Projects" : "Proyectos"
         } | La Vulcanizadora`}</title>
       </Head>
-      <MobileMenu />
+      <Hide above="md">
+        <MobileMenu />
+      </Hide>
       <Flex {...style.mainContainer}>
         <Logo logoUrl={logoUrl} />
         <Flex {...style.listContainer}>
@@ -27,6 +30,7 @@ const ProjectList = ({ logoUrl, projectList }) => {
           ))}
         </Flex>
       </Flex>
+      <DesktopMenu />
     </>
   );
 };

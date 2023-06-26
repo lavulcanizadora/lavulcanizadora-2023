@@ -11,30 +11,35 @@ import {
 } from "@chakra-ui/react";
 import style from "./style";
 import SocialMediaIcons from "../SocialMediaIcons";
+import { useRouter } from "next/router";
 
 const MobileMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  console.log(isOpen);
+  const router = useRouter();
 
   return (
     <>
-      <Button {...style.menuButton} onClick={onOpen} style={isOpen ? {display: "none"} : {display: "inline-block"}}>
+      <Button
+        {...style.menuButton}
+        onClick={onOpen}
+        style={isOpen ? { display: "none" } : { display: "inline-block" }}
+      >
         <MobileMenuIcon />
       </Button>
       <Modal isOpen={isOpen} onClose={onClose} size={"full"}>
         <ModalContent {...style.modalContent}>
-            <Flex>
-              <ModalCloseButton {...style.modalCloseButton} />
-            </Flex>
-            <Flex {...style.menuPagesList}>
-              <Heading {...style.menuLink}>Projects</Heading>
-              <Heading {...style.menuLink}>About</Heading>
-              <Heading {...style.menuLink}>News</Heading>
-            </Flex>
-            <Flex {...style.iconsMenuMobile}>
-                <SocialMediaIcons />
-            </Flex>
+          <Flex>
+            <ModalCloseButton {...style.modalCloseButton} />
+          </Flex>
+          <Flex {...style.menuPagesList}>
+            <Heading {...style.menuLink}>{router.locale === "en" ? "Projects" : "Proyectos"}</Heading>
+            <Heading {...style.menuLink}>{router.locale === "en" ? "About" : "Nosotros"}</Heading>
+            <Heading {...style.menuLink}>{router.locale === "en" ? "News" : "Noticias"}</Heading>
+          </Flex>
+          <Flex {...style.iconsMenuMobile}>
+            <SocialMediaIcons />
+          </Flex>
         </ModalContent>
       </Modal>
     </>

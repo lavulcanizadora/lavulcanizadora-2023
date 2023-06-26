@@ -1,10 +1,17 @@
 const styles = {
   iconsContainer: {
-    gap: "20px",
+    gap: { base: "20px", md: "10px" },
   },
   icon: {
-    width: "20px",
-    height: "20px",
+    cursor: "pointer",
+    width: { base: "20px", md: "18px" },
+    height: { base: "20px", md: "18px" },
+    opacity: { md: "0.7" },
+    _hover: {
+      opacity: {
+        md: "1",
+      },
+    },
   },
 };
 
