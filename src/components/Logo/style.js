@@ -11,6 +11,7 @@ const style = {
       opacity: { md: "1" },
     },
     maxWidth: { base: "250px", md: "150px", lg: "250px" },
+    cursor: "pointer"
   },
 };
 
