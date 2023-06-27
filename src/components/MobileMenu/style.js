@@ -30,6 +30,7 @@ const style = {
     fontSize: "24px",
     textTransform: "uppercase",
     fontWeight: "700",
+    cursor: "pointer"
   },
   iconsMenuMobile: {
     justifyContent: "center",

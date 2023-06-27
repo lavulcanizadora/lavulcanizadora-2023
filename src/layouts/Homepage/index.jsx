@@ -11,9 +11,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const Homepage = ({ logoUrl, homeInfo }) => {
   const router = useRouter();
-
-  console.log(homeInfo);
-
+  
   return (
     <>
       <Head>

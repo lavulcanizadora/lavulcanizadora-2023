@@ -12,6 +12,7 @@ import {
 import style from "./style";
 import SocialMediaIcons from "../SocialMediaIcons";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const MobileMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,9 +34,21 @@ const MobileMenu = () => {
             <ModalCloseButton {...style.modalCloseButton} />
           </Flex>
           <Flex {...style.menuPagesList}>
-            <Heading {...style.menuLink}>{router.locale === "en" ? "Projects" : "Proyectos"}</Heading>
-            <Heading {...style.menuLink}>{router.locale === "en" ? "About" : "Nosotros"}</Heading>
-            <Heading {...style.menuLink}>{router.locale === "en" ? "News" : "Noticias"}</Heading>
+            <Link href="/projects" passHref legacyBehavior>
+              <Heading {...style.menuLink}>
+                {router.locale === "en" ? "Projects" : "Proyectos"}
+              </Heading>
+            </Link>
+            <Link href="/about" passHref legacyBehavior>
+              <Heading {...style.menuLink}>
+                {router.locale === "en" ? "About" : "Nosotros"}
+              </Heading>
+            </Link>
+            <Link href="/news" passHref legacyBehavior>
+              <Heading {...style.menuLink}>
+                {router.locale === "en" ? "News" : "Noticias"}
+              </Heading>
+            </Link>
           </Flex>
           <Flex {...style.iconsMenuMobile}>
             <SocialMediaIcons />
