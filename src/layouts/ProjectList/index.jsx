@@ -30,7 +30,9 @@ const ProjectList = ({ logoUrl, projectList }) => {
           ))}
         </Flex>
       </Flex>
-      <DesktopMenu />
+      <Hide below="md">
+        <DesktopMenu />
+      </Hide>
     </>
   );
 };

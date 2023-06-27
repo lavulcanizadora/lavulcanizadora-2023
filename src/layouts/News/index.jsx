@@ -7,6 +7,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import MobileMenu from "@/src/components/MobileMenu";
 import DesktopMenu from "@/src/components/DesktopMenu";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const News = ({ logoUrl, news }) => {
   const router = useRouter();
@@ -15,7 +16,7 @@ const News = ({ logoUrl, news }) => {
     <>
       <Head>
         <title>{`${
-          router.locale === "en" ? "About" : "Nosotros"
+          router.locale === "en" ? "News" : "Noticias"
         } | La Vulcanizadora`}</title>
       </Head>
       <Hide above="md">
@@ -23,16 +24,34 @@ const News = ({ logoUrl, news }) => {
       </Hide>
       <Flex {...style.mainContainer}>
         <Logo logoUrl={logoUrl} />
-        <Flex {...style.biosContainer}></Flex>
+        <Flex {...style.newsContainer}>
+          <Flex className="body-text">
+            {documentToReactComponents(news.content, {
+              renderText: (text) => {
+                return text
+                  .split("\n")
+                  .reduce((children, textSegment, index) => {
+                    return [
+                      ...children,
+                      index > 0 && <br key={index} />,
+                      textSegment,
+                    ];
+                  }, []);
+              },
+            })}
+          </Flex>
+        </Flex>
       </Flex>
-      <DesktopMenu />
+      <Hide below="md">
+        <DesktopMenu />
+      </Hide>
     </>
   );
 };
 
 News.propTypes = {
   logoUrl: PropTypes.string.isRequired,
-  news: PropTypes.array.isRequired,
+  news: PropTypes.object.isRequired,
 };
 
 export default News;

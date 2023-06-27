@@ -62,7 +62,9 @@ const ProjectInfo = ({ logoUrl, projectInfo }) => {
           </Flex>
         </Flex>
       </Flex>
-      <DesktopMenu />
+      <Hide below="md">
+        <DesktopMenu />
+      </Hide>
     </>
   );
 };

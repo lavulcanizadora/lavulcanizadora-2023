@@ -8,7 +8,7 @@ const Project = ({ logoUrl, news }) => {
 
     console.log(news);
 
-  return <News logoUrl={logoUrl} news={news} />;
+  return <News logoUrl={logoUrl} news={news[0]} />;
 };
 
 Project.propTypes = {

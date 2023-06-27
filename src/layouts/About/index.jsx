@@ -31,7 +31,9 @@ const ProjectList = ({ logoUrl, bios }) => {
           <Heading {...style.email}>lavulcanizadoraco@gmail.com</Heading>
         </Flex>
       </Flex>
-      <DesktopMenu />
+      <Hide below="md">
+        <DesktopMenu />
+      </Hide>
     </>
   );
 };
