@@ -17,6 +17,17 @@ const theme = extendTheme({
         color: "blue",
         textDecoration: "underline",
       },
+      ".address-text": {
+        p: {
+          fontFamily: "'Chivo', sans-serif",
+          color: "rgb(26, 32, 44)",
+        },
+        a: {
+          textDecoration: "none",
+          color: "black",
+          color: "rgb(26, 32, 44)",
+        },
+      },
     },
   },
   fonts: {

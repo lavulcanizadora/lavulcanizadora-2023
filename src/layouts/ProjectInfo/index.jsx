@@ -8,18 +8,20 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Head from "next/head";
 import MobileMenu from "@/src/components/MobileMenu";
 import DesktopMenu from "@/src/components/DesktopMenu";
+import AddressParagraph from "@/src/components/AddressParagraph";
 
-const ProjectInfo = ({ logoUrl, projectInfo }) => {
+const ProjectInfo = ({ logoUrl, projectInfo, globalContent }) => {
   return (
     <>
       <Head>
-        <title>{`${projectInfo.title} | La Vulcanizadora`}</title>
+        <title>{`${projectInfo.title} | ${globalContent.pageTitle}`}</title>
+        <meta name="description" content={globalContent.pageDescription} />
       </Head>
       <Hide above="md">
         <MobileMenu />
       </Hide>
       <Flex {...style.mainContainer}>
-        <Logo logoUrl={logoUrl} />
+        <Logo logoUrl={logoUrl} address={globalContent.address} />
         <Flex {...style.infoContainer}>
           <Carousel carouselSlides={projectInfo.carousel} />
           <Flex {...style.infoSpecsContainer}>
@@ -60,6 +62,9 @@ const ProjectInfo = ({ logoUrl, projectInfo }) => {
               })}
             </Flex>
           </Flex>
+          <Hide above="md">
+            <AddressParagraph address={globalContent.address} />
+          </Hide>
         </Flex>
       </Flex>
       <Hide below="md">
@@ -72,6 +77,7 @@ const ProjectInfo = ({ logoUrl, projectInfo }) => {
 ProjectInfo.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   projectInfo: PropTypes.object.isRequired,
+  globalContent: PropTypes.object.isRequired
 };
 
 export default ProjectInfo;

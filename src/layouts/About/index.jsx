@@ -8,27 +8,31 @@ import { useRouter } from "next/router";
 import BioCard from "@/src/components/BioCard";
 import MobileMenu from "@/src/components/MobileMenu";
 import DesktopMenu from "@/src/components/DesktopMenu";
+import AddressParagraph from "@/src/components/AddressParagraph";
 
-const ProjectList = ({ logoUrl, bios }) => {
+const ProjectList = ({ logoUrl, bios, globalContent }) => {
   const router = useRouter();
 
   return (
     <>
       <Head>
-        <title>{`${
-          router.locale === "en" ? "About" : "Nosotros"
-        } | La Vulcanizadora`}</title>
+        <title>{`${router.locale === "en" ? "About" : "Nosotros"} | ${
+          globalContent.pageTitle
+        }`}</title>
+        <meta name="description" content={globalContent.pageDescription} />
       </Head>
       <Hide above="md">
         <MobileMenu />
       </Hide>
       <Flex {...style.mainContainer}>
-        <Logo logoUrl={logoUrl} />
+        <Logo logoUrl={logoUrl} address={globalContent.address} />
         <Flex {...style.biosContainer}>
           {bios.map((bio) => (
             <BioCard key={bio.name} bioInfo={bio} />
           ))}
-          <Heading {...style.email}>lavulcanizadoraco@gmail.com</Heading>
+          <Hide above="md">
+            <AddressParagraph address={globalContent.address} />
+          </Hide>
         </Flex>
       </Flex>
       <Hide below="md">
@@ -41,6 +45,7 @@ const ProjectList = ({ logoUrl, bios }) => {
 ProjectList.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   bios: PropTypes.array.isRequired,
+  globalContent: PropTypes.object.isRequired,
 };
 
 export default ProjectList;

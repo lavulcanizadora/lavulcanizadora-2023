@@ -4,8 +4,8 @@ import fetchEntries from "@/util/contentfulQuery";
 import fetchAsset from "@/util/contentfulAsset";
 import ProjectInfo from "@/src/layouts/ProjectInfo";
 
-const Project = ({ logoUrl, projectInfo }) => {
-  return <ProjectInfo logoUrl={logoUrl} projectInfo={projectInfo[0]} />;
+const Project = ({ logoUrl, projectInfo, globalContent }) => {
+  return <ProjectInfo logoUrl={logoUrl} projectInfo={projectInfo[0]} globalContent={globalContent[0]} />;
 };
 
 Project.propTypes = {
@@ -60,10 +60,22 @@ export const getStaticProps = async (context) => {
 
   const logoUrl = logoRes.fields.file.url;
 
+  // Traer "Global content"
+
+  const globalContentRes = await fetchEntries({
+    content_type: "globalContent",
+    locale: context.locale === "en" ? "en-US" : "es-CO",
+  });
+
+  const globalContent = await globalContentRes.map((p) => {
+    return p.fields;
+  });
+
   return {
     props: {
       projectInfo,
       logoUrl,
+      globalContent
     },
   };
 };

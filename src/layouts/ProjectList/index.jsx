@@ -8,26 +8,31 @@ import { useRouter } from "next/router";
 import ProjectCover from "@/src/components/ProjectCover";
 import MobileMenu from "@/src/components/MobileMenu";
 import DesktopMenu from "@/src/components/DesktopMenu";
+import AddressParagraph from "@/src/components/AddressParagraph";
 
-const ProjectList = ({ logoUrl, projectList }) => {
+const ProjectList = ({ logoUrl, projectList, globalContent }) => {
   const router = useRouter();
 
   return (
     <>
       <Head>
-        <title>{`${
-          router.locale === "en" ? "Projects" : "Proyectos"
-        } | La Vulcanizadora`}</title>
+        <title>{`${router.locale === "en" ? "Projects" : "Proyectos"} | ${
+          globalContent.pageTitle
+        }`}</title>
+        <meta name="description" content={globalContent.pageDescription} />
       </Head>
       <Hide above="md">
         <MobileMenu />
       </Hide>
       <Flex {...style.mainContainer}>
-        <Logo logoUrl={logoUrl} />
+        <Logo logoUrl={logoUrl} address={globalContent.address} />
         <Flex {...style.listContainer}>
           {projectList.map((project) => (
             <ProjectCover key={project.projectName} projectInfo={project} />
           ))}
+          <Hide above="md">
+            <AddressParagraph address={globalContent.address} />
+          </Hide>
         </Flex>
       </Flex>
       <Hide below="md">
@@ -40,6 +45,7 @@ const ProjectList = ({ logoUrl, projectList }) => {
 ProjectList.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   projectList: PropTypes.array.isRequired,
+  globalContent: PropTypes.object.isRequired,
 };
 
 export default ProjectList;
