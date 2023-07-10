@@ -3,7 +3,8 @@ const style = {
     padding: { base: "54px 108px", md: 0 },
     minWidth: { md: "150px", lg: "250px" },
     justifyContent: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+    alignItems: "center",
   },
   logo: {
     filter: "invert(1)",
@@ -12,7 +13,7 @@ const style = {
       opacity: { md: "1" },
     },
     maxWidth: { base: "250px", md: "150px", lg: "250px" },
-    cursor: "pointer"
+    cursor: "pointer",
   },
 };
 

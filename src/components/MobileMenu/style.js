@@ -8,6 +8,9 @@ const style = {
     _hover: {
       opacity: 1,
     },
+    _active: {
+      backgroundColor: "none",
+    },
   },
   modalCloseButton: {
     position: "relative",
@@ -18,7 +21,7 @@ const style = {
   },
   modalContent: {
     backgroundColor: "rgb(255, 255, 255, 0.7)",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   menuPagesList: {
     flexDirection: "column",
@@ -30,12 +33,12 @@ const style = {
     fontSize: "24px",
     textTransform: "uppercase",
     fontWeight: "700",
-    cursor: "pointer"
+    cursor: "pointer",
   },
   iconsMenuMobile: {
     justifyContent: "center",
-    paddingBottom: "25px"
-  }
+    paddingBottom: "25px",
+  },
 };
 
 export default style;

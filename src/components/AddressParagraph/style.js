@@ -5,6 +5,7 @@ const style = {
     gap: "16px",
     marginTop: "32px",
     opacity: { md: "0.7" },
+    width: "100%",
   },
 };
 
