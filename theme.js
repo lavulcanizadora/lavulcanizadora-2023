@@ -24,9 +24,24 @@ const theme = extendTheme({
         },
         a: {
           textDecoration: "none",
-          color: "black",
           color: "rgb(26, 32, 44)",
         },
+      },
+      ".address-text-homepage": {
+        p: {
+          fontFamily: "'Chivo', sans-serif",
+          color: "white",
+        },
+        a: {
+          textDecoration: "none",
+          color: "white",
+        },
+      },
+      ".background-image": {
+        opacity: 0,
+      },
+      ".background-image-active": {
+        opacity: 1,
       },
     },
   },

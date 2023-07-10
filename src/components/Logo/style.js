@@ -15,6 +15,15 @@ const style = {
     maxWidth: { base: "250px", md: "150px", lg: "250px" },
     cursor: "pointer",
   },
+  logoInvert: {
+    filter: "invert(0)",
+    opacity: { md: "0.7" },
+    _hover: {
+      opacity: { md: "1" },
+    },
+    maxWidth: { base: "250px", md: "150px", lg: "250px" },
+    cursor: "pointer",
+  },
 };
 
 export default style;

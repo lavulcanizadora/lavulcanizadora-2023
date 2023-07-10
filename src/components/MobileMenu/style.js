@@ -19,8 +19,21 @@ const style = {
     right: 0,
     padding: "45px 40px",
   },
+  modalCloseButtonInvert: {
+    position: "relative",
+    fontSize: "24px",
+    top: 0,
+    right: 0,
+    padding: "45px 40px",
+    color: "white",
+    opacity: "0.7",
+  },
   modalContent: {
     backgroundColor: "rgb(255, 255, 255, 0.7)",
+    justifyContent: "space-between",
+  },
+  modalContentInvert: {
+    backgroundColor: "rgb(0, 0, 0, 0.7)",
     justifyContent: "space-between",
   },
   menuPagesList: {
@@ -34,6 +47,14 @@ const style = {
     textTransform: "uppercase",
     fontWeight: "700",
     cursor: "pointer",
+  },
+  menuLinkInvert: {
+    fontSize: "24px",
+    textTransform: "uppercase",
+    fontWeight: "700",
+    cursor: "pointer",
+    color: "white",
+    opacity: "0.7",
   },
   iconsMenuMobile: {
     justifyContent: "center",
