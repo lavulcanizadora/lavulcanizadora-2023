@@ -15,7 +15,7 @@ Home.propTypes = {
 };
 
 export const getStaticProps = async (context) => {
-  // Traer bios
+  // Traer homepage content
 
   const res = await fetchEntries({
     content_type: "home",

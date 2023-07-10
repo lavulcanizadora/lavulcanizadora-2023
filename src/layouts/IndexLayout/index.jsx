@@ -7,17 +7,11 @@ import Link from "next/link";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 
-const backgroundVideos = [
-  "https://www.lavulcanizadora.com/uploads/loop1.mp4",
-  "https://www.lavulcanizadora.com/uploads/loop2.mp4",
-  "https://www.lavulcanizadora.com/uploads/loop3.mp4",
-];
-
-const IndexLayout = ({ logoUrl, globalContent }) => {
+const IndexLayout = ({ logoUrl, globalContent, homepageContent }) => {
   const [backgroundIndex, setBackgroundVideo] = useState(0);
 
   useEffect(() => {
-    backgroundIndex === backgroundVideos.length - 1
+    backgroundIndex === homepageContent.video.length - 1
       ? setTimeout(() => {
           setBackgroundVideo(0);
         }, 4000)
@@ -34,12 +28,12 @@ const IndexLayout = ({ logoUrl, globalContent }) => {
       </Head>
       <Flex {...style.mainContainer}>
         <Flex>
-          {backgroundVideos.map((url, index) =>
+          {homepageContent.video.map((url, index) =>
             backgroundIndex === index ? (
               <video
                 className="cover-video-active"
                 src={url}
-                preLoad="auto"
+                preload="auto"
                 autoPlay
                 muted
                 loop
@@ -49,7 +43,7 @@ const IndexLayout = ({ logoUrl, globalContent }) => {
               <video
                 className="cover-video"
                 src={url}
-                preLoad="auto"
+                preload="auto"
                 autoPlay
                 muted
                 loop
@@ -81,6 +75,7 @@ const IndexLayout = ({ logoUrl, globalContent }) => {
 IndexLayout.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   globalContent: PropTypes.object.isRequired,
+  homepageContent: PropTypes.object.isRequired,
 };
 
 export default IndexLayout;

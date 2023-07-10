@@ -4,13 +4,14 @@ import fetchAsset from "@/util/contentfulAsset";
 import IndexLayout from "@/src/layouts/IndexLayout";
 import fetchEntries from "@/util/contentfulQuery";
 
-const Index = ({ logoUrl, globalContent }) => {
-  return <IndexLayout logoUrl={logoUrl} globalContent={globalContent[0]} />;
+const Index = ({ logoUrl, globalContent, homepageContent }) => {
+  return <IndexLayout logoUrl={logoUrl} globalContent={globalContent[0]} homepageContent={homepageContent[0]} />;
 };
 
 Index.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   globalContent: PropTypes.array.isRequired,
+  homepageContent: PropTypes.array.isRequired
 };
 
 export const getStaticProps = async (context) => {
@@ -31,10 +32,22 @@ export const getStaticProps = async (context) => {
     return p.fields;
   });
 
+  // Traer homepage content
+
+  const homepageRes = await fetchEntries({
+    content_type: "home",
+    locale: context.locale === "en" ? "en-US" : "es-CO",
+  });
+
+  const homepageContent = await homepageRes.map((p) => {
+    return p.fields;
+  });
+
   return {
     props: {
       logoUrl,
       globalContent,
+      homepageContent
     },
   };
 };

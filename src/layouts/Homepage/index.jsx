@@ -10,19 +10,11 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import AddressParagraph from "@/src/components/AddressParagraph";
 import { useState, useEffect } from "react";
 
-const backgroundImages = [
-  "https://raw.githubusercontent.com/lavulcanizadora/lavulcanizadora/main/uploads/backgrounds/background-1.jpg",
-  "https://raw.githubusercontent.com/lavulcanizadora/lavulcanizadora/main/uploads/backgrounds/background-2.jpg",
-  "https://raw.githubusercontent.com/lavulcanizadora/lavulcanizadora/main/uploads/backgrounds/background-3.jpg",
-  "https://raw.githubusercontent.com/lavulcanizadora/lavulcanizadora/main/uploads/backgrounds/background-4.jpg",
-  "https://raw.githubusercontent.com/lavulcanizadora/lavulcanizadora/main/uploads/backgrounds/background-5.jpg",
-];
-
 const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
 
   useEffect(() => {
-    backgroundIndex === backgroundImages.length - 1
+    backgroundIndex === homeInfo.backgroundCarousel.length - 1
       ? setTimeout(() => {
           setBackgroundIndex(0);
         }, 5000)
@@ -42,25 +34,27 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
       </Hide>
       <Flex {...style.mainContainer}>
         <Flex>
-          {backgroundImages.map((image, index) =>
+          {homeInfo.backgroundCarousel.map((image, index) =>
             index === backgroundIndex ? (
               <Image
-                src={image}
+                src={image.fields.file.url}
                 alt="Background image"
                 className="background-image-active"
-                key={image}
+                key={image.fields.file.url}
                 {...style.backgroundImage}
               />
             ) : (
               <Image
-                src={image}
+                src={image.fields.file.url}
                 alt="Background image"
                 className="background-image"
-                key={image}
+                key={image.fields.file.url}
                 {...style.backgroundImage}
               />
             )
           )}
+          <Flex {...style.backgroundColorBlack}>
+          </Flex>
         </Flex>
         <Logo logoUrl={logoUrl} address={globalContent.address} isHomepage />
         <Flex {...style.homeContainer}>

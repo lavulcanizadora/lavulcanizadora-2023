@@ -34,6 +34,16 @@ const style = {
     objectFit: "cover",
     filter: "brightness(50%)",
   },
+  backgroundColorBlack: {
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "black",
+    overflow: "hidden",
+    position: "fixed",
+    top: "0",
+    left: "0",
+    zIndex: "-20",
+  },
 };
 
 export default style;
