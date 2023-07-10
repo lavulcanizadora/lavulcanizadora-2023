@@ -3,6 +3,33 @@ import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
   styles: {
     global: {
+      ".cover-video": {
+        height: { base: "100%", md: "150%" },
+        width: { base: "auto", md: "150%" },
+        objectFit: "cover",
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        overflow: "hidden",
+        transform: "translate(-50%, -50%)",
+        visibility: "hidden",
+        opacity: "0",
+        zIndex: "-10"
+      },
+      ".cover-video-active": {
+        height: { base: "100%", md: "150%" },
+        width: { base: "auto", md: "150%" },
+        objectFit: "cover",
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        overflow: "hidden",
+        transform: "translate(-50%, -50%)",
+        visibility: "visible",
+        opacity: "1",
+        filter: "brightness(50%)",
+        zIndex: "-10"
+      },
       ".body-text": {
         b: {
           fontFamily: "'Mulish', sans-serif",

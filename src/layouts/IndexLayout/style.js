@@ -12,7 +12,6 @@ const style = {
     gap: "80px",
   },
   logo: {
-    filter: "invert(1)",
     opacity: "0.7",
     _hover: {
       opacity: "1",
@@ -29,10 +28,12 @@ const style = {
     _hover: {
       opacity: "1",
     },
+    color: "#FFF",
   },
   languageHeading: {
     opacity: "0.7",
     fontSize: "27px",
+    color: "#FFF",
   },
   socialIcons: {
     width: "100%",
