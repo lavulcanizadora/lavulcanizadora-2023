@@ -2,12 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import AutoHeight from 'embla-carousel-auto-height';
 import { Box, Flex, Image } from "@chakra-ui/react";
 import style from "./style";
 
 const Carousel = ({ carouselSlides }) => {
-  const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay(), AutoHeight()]);
+  const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
 
   return (
     <Box {...style.embla} className="embla">
