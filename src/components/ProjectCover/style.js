@@ -19,6 +19,7 @@ const style = {
     fontSize: { base: "10px", md: "16px" },
     color: "rgb(255, 255, 255, 0.6)",
     fontWeight: "600",
+    textAlign: "center"
   },
 };
 
