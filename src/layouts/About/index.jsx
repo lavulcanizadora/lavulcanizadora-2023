@@ -28,7 +28,7 @@ const ProjectList = ({ logoUrl, bios, globalContent }) => {
         <Logo logoUrl={logoUrl} address={globalContent.address} />
         <Flex {...style.biosContainer}>
           {bios.map((bio) => (
-            <BioCard key={bio.name} bioInfo={bio} />
+            <BioCard key={bio.fields.name} bioInfo={bio} />
           ))}
           <Hide above="md">
             <AddressParagraph address={globalContent.address} />

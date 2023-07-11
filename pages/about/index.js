@@ -5,13 +5,19 @@ import fetchAsset from "@/util/contentfulAsset";
 import About from "@/src/layouts/About";
 
 const Project = ({ logoUrl, bios, globalContent }) => {
-  return <About logoUrl={logoUrl} bios={bios} globalContent={globalContent[0]} />;
+  return (
+    <About
+      logoUrl={logoUrl}
+      bios={globalContent[0].biosOrders}
+      globalContent={globalContent[0]}
+    />
+  );
 };
 
 Project.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   bios: PropTypes.array.isRequired,
-  globalContent: PropTypes.array.isRequired
+  globalContent: PropTypes.array.isRequired,
 };
 
 export const getStaticProps = async (context) => {
@@ -47,7 +53,7 @@ export const getStaticProps = async (context) => {
     props: {
       logoUrl,
       bios,
-      globalContent
+      globalContent,
     },
   };
 };

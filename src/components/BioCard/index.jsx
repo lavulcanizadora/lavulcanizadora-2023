@@ -22,32 +22,32 @@ const BioCard = ({ bioInfo }) => {
         <AccordionButton {...style.accordionButton}>
           <Flex {...style.nameTitleContainer}>
             <Heading as="h2" {...style.cardName}>
-              {bioInfo.name}
+              {bioInfo.fields.name}
             </Heading>
             <Heading as="h3" {...style.cardTitle}>
-              {bioInfo.title}
+              {bioInfo.fields.title}
             </Heading>
           </Flex>
           <AccordionIcon {...style.accordionIcon} />
         </AccordionButton>
         <AccordionPanel {...style.accordionPanel}>
-          {bioInfo.image.fields.file.url && (
+          {bioInfo.fields.image.fields.file.url && (
             <Image
-              src={bioInfo.image.fields.file.url}
-              alt={bioInfo.name}
+              src={bioInfo.fields.image.fields.file.url}
+              alt={bioInfo.fields.name}
               {...style.bioImg}
             />
           )}
           <Flex {...style.cardContentContainer}>
-            {bioInfo.web && (
+            {bioInfo.fields.web && (
               <Hide above="md">
-                <Link href={bioInfo.web} target="_blank">
-                  {bioInfo.web}
+                <Link href={bioInfo.fields.web} target="_blank">
+                  {bioInfo.fields.web}
                 </Link>
               </Hide>
             )}
             <Flex className="body-text" {...style.bioContainer}>
-              {documentToReactComponents(bioInfo.bio, {
+              {documentToReactComponents(bioInfo.fields.bio, {
                 renderText: (text) => {
                   return text
                     .split("\n")
@@ -61,10 +61,10 @@ const BioCard = ({ bioInfo }) => {
                 },
               })}
             </Flex>
-            {bioInfo.web && (
+            {bioInfo.fields.web && (
               <Hide below="md">
-                <Link href={bioInfo.web} target="_blank">
-                  {bioInfo.web}
+                <Link href={bioInfo.fields.web} target="_blank">
+                  {bioInfo.fields.web}
                 </Link>
               </Hide>
             )}
