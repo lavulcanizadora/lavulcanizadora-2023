@@ -28,7 +28,7 @@ const ProjectList = ({ logoUrl, projectList, globalContent }) => {
         <Logo logoUrl={logoUrl} address={globalContent.address} />
         <Flex {...style.listContainer}>
           {projectList.map((project) => (
-            <ProjectCover key={project.projectName} projectInfo={project} />
+            <ProjectCover key={project.fields.title} projectInfo={project} />
           ))}
           <Hide above="md">
             <AddressParagraph address={globalContent.address} />

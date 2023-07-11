@@ -5,14 +5,19 @@ import fetchAsset from "@/util/contentfulAsset";
 import ProjectList from "@/src/layouts/ProjectList";
 
 const Project = ({ logoUrl, projectList, globalContent }) => {
-
-  return <ProjectList logoUrl={logoUrl} projectList={projectList} globalContent={globalContent[0]} />;
+  return (
+    <ProjectList
+      logoUrl={logoUrl}
+      projectList={globalContent[0].projectOrder}
+      globalContent={globalContent[0]}
+    />
+  );
 };
 
 Project.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   projectList: PropTypes.array.isRequired,
-  globalContent: PropTypes.array.isRequired
+  globalContent: PropTypes.array.isRequired,
 };
 
 export const getStaticProps = async (context) => {
@@ -58,7 +63,7 @@ export const getStaticProps = async (context) => {
     props: {
       logoUrl,
       projectList,
-      globalContent
+      globalContent,
     },
   };
 };

@@ -4,19 +4,16 @@ import style from "./style";
 import { Flex, Heading } from "@chakra-ui/react";
 import Link from "next/link";
 
-
 const ProjectCover = ({ projectInfo }) => {
   return (
-    <Link
-      href={"/projects/" + projectInfo.projectSlug}
-      legacyBehavior
-      passHref
-    >
+    <Link href={"/projects/" + projectInfo.fields.slug} legacyBehavior passHref>
       <Flex
         {...style.projectContainer}
-        backgroundImage={`url(${projectInfo.projectCover})`}
+        backgroundImage={`url(${projectInfo.fields.coverPhoto.fields.file.url})`}
       >
-        <Heading as="h2" {...style.projectHeading}>{projectInfo.projectName}</Heading>
+        <Heading as="h2" {...style.projectHeading}>
+          {projectInfo.fields.title}
+        </Heading>
       </Flex>
     </Link>
   );
