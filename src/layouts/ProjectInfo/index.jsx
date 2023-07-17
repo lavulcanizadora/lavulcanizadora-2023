@@ -62,9 +62,7 @@ const ProjectInfo = ({ logoUrl, projectInfo, globalContent }) => {
               })}
             </Flex>
           </Flex>
-          <Hide above="md">
-            <AddressParagraph address={globalContent.address} />
-          </Hide>
+          <AddressParagraph address={globalContent.address} />
         </Flex>
       </Flex>
       <Hide below="md">
@@ -77,7 +75,7 @@ const ProjectInfo = ({ logoUrl, projectInfo, globalContent }) => {
 ProjectInfo.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   projectInfo: PropTypes.object.isRequired,
-  globalContent: PropTypes.object.isRequired
+  globalContent: PropTypes.object.isRequired,
 };
 
 export default ProjectInfo;

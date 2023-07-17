@@ -30,9 +30,7 @@ const ProjectList = ({ logoUrl, projectList, globalContent }) => {
           {projectList.map((project) => (
             <ProjectCover key={project.fields.title} projectInfo={project} />
           ))}
-          <Hide above="md">
-            <AddressParagraph address={globalContent.address} />
-          </Hide>
+          <AddressParagraph address={globalContent.address} />
         </Flex>
       </Flex>
       <Hide below="md">

@@ -42,9 +42,7 @@ const News = ({ logoUrl, news, globalContent }) => {
               },
             })}
           </Flex>
-          <Hide above="md">
-            <AddressParagraph address={globalContent.address} />
-          </Hide>
+          <AddressParagraph address={globalContent.address} />
         </Flex>
       </Flex>
       <Hide below="md">

@@ -53,8 +53,7 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
               />
             )
           )}
-          <Flex {...style.backgroundColorBlack}>
-          </Flex>
+          <Flex {...style.backgroundColorBlack}></Flex>
         </Flex>
         <Logo logoUrl={logoUrl} address={globalContent.address} isHomepage />
         <Flex {...style.homeContainer}>
@@ -73,9 +72,7 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
               },
             })}
           </Flex>
-          <Hide above="md">
-            <AddressParagraph address={globalContent.address} isHomepage />
-          </Hide>
+          <AddressParagraph address={globalContent.address} isHomepage />
         </Flex>
       </Flex>
       <Hide below="md">

@@ -30,9 +30,7 @@ const ProjectList = ({ logoUrl, bios, globalContent }) => {
           {bios.map((bio) => (
             <BioCard key={bio.fields.name} bioInfo={bio} />
           ))}
-          <Hide above="md">
-            <AddressParagraph address={globalContent.address} />
-          </Hide>
+          <AddressParagraph address={globalContent.address} />
         </Flex>
       </Flex>
       <Hide below="md">
