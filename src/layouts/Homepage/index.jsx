@@ -57,7 +57,8 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
         </Flex>
         <Logo logoUrl={logoUrl} address={globalContent.address} isHomepage />
         <Flex {...style.homeContainer}>
-          <Flex {...style.homeText} className="body-text">
+          <div></div>
+          <Flex {...style.homeText} className="body-text-homepage">
             {documentToReactComponents(homeInfo.paragraph, {
               renderText: (text) => {
                 return text

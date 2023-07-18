@@ -2,6 +2,7 @@ const style = {
   addressParagraph: {
     flexDirection: "column",
     textAlign: { base: "center", md: "left" },
+    alignItems: { md: "flex-end" },
     gap: "16px",
     marginTop: "32px",
     width: "100%",
@@ -9,6 +10,7 @@ const style = {
   addressParagraphHomepage: {
     flexDirection: "column",
     textAlign: { base: "center", md: "left" },
+    alignItems: { md: "flex-end" },
     gap: "16px",
     marginTop: "32px",
     width: "100%",

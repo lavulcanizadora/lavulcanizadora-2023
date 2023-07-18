@@ -14,7 +14,7 @@ const theme = extendTheme({
         transform: "translate(-50%, -50%)",
         visibility: "hidden",
         opacity: "0",
-        zIndex: "-10"
+        zIndex: "-10",
       },
       ".cover-video-active": {
         height: { base: "100%", md: "150%" },
@@ -28,13 +28,18 @@ const theme = extendTheme({
         visibility: "visible",
         opacity: "1",
         filter: "brightness(50%)",
-        zIndex: "-10"
+        zIndex: "-10",
       },
       ".body-text": {
         b: {
           fontFamily: "'Mulish', sans-serif",
           fontWeight: "900",
           fontSize: "13px",
+        },
+      },
+      ".body-text-homepage": {
+        p: {
+          fontSize: "18px",
         },
       },
       p: {
@@ -48,6 +53,7 @@ const theme = extendTheme({
         p: {
           fontFamily: "'Chivo', sans-serif",
           color: "rgb(26, 32, 44)",
+          width: { md: "300px" },
         },
         a: {
           textDecoration: "none",
@@ -58,6 +64,7 @@ const theme = extendTheme({
         p: {
           fontFamily: "'Chivo', sans-serif",
           color: "white",
+          width: { md: "300px" },
         },
         a: {
           textDecoration: "none",

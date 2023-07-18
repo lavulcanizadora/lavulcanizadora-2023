@@ -11,7 +11,7 @@ const style = {
     height: { base: "auto", md: "100%" },
     width: { base: "auto", md: "100%" },
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: { base: "center", md: "space-between" },
     margin: { base: "48px", md: "0" },
     paddingBottom: { base: "32px", md: 0 },
   },
