@@ -36,6 +36,16 @@ const MobileMenu = ({ isHomepage }) => {
               <ModalCloseButton {...style.modalCloseButtonInvert} />
             </Flex>
             <Flex {...style.menuPagesList}>
+              <Link
+                href={router.asPath}
+                locale={router.locale === "en" ? "es" : "en"}
+                passHref
+                legacyBehavior
+              >
+                <Heading {...style.menuLinkInvert}>
+                  {router.locale === "en" ? "Español" : "English"}
+                </Heading>
+              </Link>
               <Link href="/projects" passHref legacyBehavior>
                 <Heading {...style.menuLinkInvert}>
                   {router.locale === "en" ? "Projects" : "Proyectos"}
@@ -62,6 +72,16 @@ const MobileMenu = ({ isHomepage }) => {
               <ModalCloseButton {...style.modalCloseButton} />
             </Flex>
             <Flex {...style.menuPagesList}>
+              <Link
+                href={router.asPath}
+                locale={router.locale === "en" ? "es" : "en"}
+                passHref
+                legacyBehavior
+              >
+                <Heading {...style.menuLink}>
+                  {router.locale === "en" ? "Español" : "English"}
+                </Heading>
+              </Link>
               <Link href="/projects" passHref legacyBehavior>
                 <Heading {...style.menuLink}>
                   {router.locale === "en" ? "Projects" : "Proyectos"}
