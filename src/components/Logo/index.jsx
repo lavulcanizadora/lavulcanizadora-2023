@@ -8,7 +8,7 @@ import Link from "next/link.js";
 const Logo = ({ logoUrl, address, isHomepage }) => {
   return (
     <Flex {...style.container}>
-      <Link href="/home" passHref legacyBehavior>
+      <Link href="/" passHref legacyBehavior>
         {isHomepage ? (
           <Image src={logoUrl} alt="Logo La Vulcanizadora" {...style.logoInvert} />
         ) : (
