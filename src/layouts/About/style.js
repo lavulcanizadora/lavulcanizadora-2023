@@ -9,7 +9,7 @@ const style = {
   },
   biosContainer: {
     flexDirection: "column",
-    justifyContent: { base: "center", md: "space-between" },
+    justifyContent: { md: "space-between" },
     marginBottom: { base: "26px", lg: "62px" },
     marginLeft: { base: "5px", md: "0" },
     marginRight: { base: "5px", md: "0" },

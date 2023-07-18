@@ -28,7 +28,7 @@ const BioCard = ({ bioInfo }) => {
               {bioInfo.fields.title}
             </Heading>
           </Flex>
-          <AccordionIcon {...style.accordionIcon} />
+          {/* <AccordionIcon {...style.accordionIcon} /> */}
         </AccordionButton>
         <AccordionPanel {...style.accordionPanel}>
           {bioInfo.fields.image.fields.file.url && (
