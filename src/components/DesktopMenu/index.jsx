@@ -12,7 +12,7 @@ const DesktopMenu = ({ isHomepage }) => {
   return isHomepage ? (
     <Flex {...style.desktopMenuContainerInvert}>
       <SocialMediaIcons isHomepage />
-      <Link
+      {/* <Link
         href={router.asPath}
         locale={router.locale === "en" ? "es" : "en"}
         passHref
@@ -21,7 +21,7 @@ const DesktopMenu = ({ isHomepage }) => {
         <Heading {...style.menuLinkInvert}>
           {router.locale === "en" ? "Español" : "English"}
         </Heading>
-      </Link>
+      </Link> */}
       <Link href="/projects" passHref legacyBehavior>
         <Heading {...style.menuLinkInvert}>
           {router.locale === "en" ? "Projects" : "Proyectos"}
@@ -41,7 +41,7 @@ const DesktopMenu = ({ isHomepage }) => {
   ) : (
     <Flex {...style.desktopMenuContainer}>
       <SocialMediaIcons />
-      <Link
+      {/* <Link
         href={router.asPath}
         locale={router.locale === "en" ? "es" : "en"}
         passHref
@@ -50,7 +50,7 @@ const DesktopMenu = ({ isHomepage }) => {
         <Heading {...style.menuLink}>
           {router.locale === "en" ? "Español" : "English"}
         </Heading>
-      </Link>
+      </Link> */}
       <Link href="/projects" passHref legacyBehavior>
         <Heading {...style.menuLink}>
           {router.locale === "en" ? "Projects" : "Proyectos"}

@@ -9,6 +9,7 @@ import Head from "next/head";
 import MobileMenu from "@/src/components/MobileMenu";
 import DesktopMenu from "@/src/components/DesktopMenu";
 import AddressParagraph from "@/src/components/AddressParagraph";
+import LanguageToggle from "@/src/components/LanguageToggle";
 
 const ProjectInfo = ({ logoUrl, projectInfo, globalContent }) => {
   return (
@@ -66,6 +67,7 @@ const ProjectInfo = ({ logoUrl, projectInfo, globalContent }) => {
         </Flex>
       </Flex>
       <Hide below="md">
+        <LanguageToggle />
         <DesktopMenu />
       </Hide>
     </>

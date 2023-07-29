@@ -9,6 +9,7 @@ import BioCard from "@/src/components/BioCard";
 import MobileMenu from "@/src/components/MobileMenu";
 import DesktopMenu from "@/src/components/DesktopMenu";
 import AddressParagraph from "@/src/components/AddressParagraph";
+import LanguageToggle from "@/src/components/LanguageToggle";
 
 const ProjectList = ({ logoUrl, bios, globalContent }) => {
   const router = useRouter();
@@ -36,6 +37,7 @@ const ProjectList = ({ logoUrl, bios, globalContent }) => {
         </Flex>
       </Flex>
       <Hide below="md">
+        <LanguageToggle />
         <DesktopMenu />
       </Hide>
     </>

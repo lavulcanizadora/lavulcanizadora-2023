@@ -9,6 +9,7 @@ import DesktopMenu from "@/src/components/DesktopMenu";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import AddressParagraph from "@/src/components/AddressParagraph";
 import { useState, useEffect } from "react";
+import LanguageToggle from "@/src/components/LanguageToggle";
 
 const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
@@ -77,6 +78,7 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
         </Flex>
       </Flex>
       <Hide below="md">
+        <LanguageToggle isHomepage />
         <DesktopMenu isHomepage />
       </Hide>
     </>

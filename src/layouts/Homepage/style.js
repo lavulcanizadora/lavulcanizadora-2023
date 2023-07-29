@@ -14,6 +14,7 @@ const style = {
     justifyContent: { base: "center", md: "space-between" },
     margin: { base: "48px", md: "0" },
     paddingBottom: { base: "32px", md: 0 },
+    overflow: "scroll",
   },
   homeText: {
     flexDirection: "column",

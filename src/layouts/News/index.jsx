@@ -9,6 +9,7 @@ import MobileMenu from "@/src/components/MobileMenu";
 import DesktopMenu from "@/src/components/DesktopMenu";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import AddressParagraph from "@/src/components/AddressParagraph";
+import LanguageToggle from "@/src/components/LanguageToggle";
 
 const News = ({ logoUrl, news, globalContent }) => {
   const router = useRouter();
@@ -46,6 +47,7 @@ const News = ({ logoUrl, news, globalContent }) => {
         </Flex>
       </Flex>
       <Hide below="md">
+        <LanguageToggle />
         <DesktopMenu />
       </Hide>
     </>
