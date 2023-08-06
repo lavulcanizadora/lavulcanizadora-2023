@@ -16,7 +16,7 @@ const style = {
   infoSpecsContainer: {
     flexDirection: "column",
     padding: { base: "12px 16px", md: "0" },
-    marginTop: { md: "48px" },
+    marginTop: { md: "24px" },
   },
   projectHeading: {
     textTransform: "uppercase",

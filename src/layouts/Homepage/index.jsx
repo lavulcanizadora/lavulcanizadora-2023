@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "@/src/components/Logo";
 import PropTypes from "prop-types";
-import { Flex, Hide, Image } from "@chakra-ui/react";
+import { Flex, Show, Image } from "@chakra-ui/react";
 import style from "./style";
 import Head from "next/head";
 import MobileMenu from "@/src/components/MobileMenu";
@@ -30,9 +30,9 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
         <title>{globalContent.pageTitle}</title>
         <meta name="description" content={globalContent.pageDescription} />
       </Head>
-      <Hide above="md">
+      <Show below="md">
         <MobileMenu isHomepage />
-      </Hide>
+      </Show>
       <Flex {...style.mainContainer}>
         <Flex>
           {homeInfo.backgroundCarousel.map((image, index) =>
@@ -77,10 +77,10 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
           <AddressParagraph address={globalContent.address} isHomepage />
         </Flex>
       </Flex>
-      <Hide below="md">
+      <Show above="md">
         <LanguageToggle isHomepage />
         <DesktopMenu isHomepage />
-      </Hide>
+      </Show>
     </>
   );
 };
@@ -88,7 +88,6 @@ const Homepage = ({ logoUrl, homeInfo, globalContent }) => {
 Homepage.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   homeInfo: PropTypes.object.isRequired,
-  // backgroundImages: PropTypes.array.isRequired,
 };
 
 export default Homepage;

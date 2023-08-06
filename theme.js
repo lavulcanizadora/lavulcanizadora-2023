@@ -3,6 +3,22 @@ import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
   styles: {
     global: {
+      ".carousel__dot-group": {
+        display: "flex",
+        justifyContent: "center",
+        gap: "8px",
+      },
+      ".carousel__dot>span": {
+        width: "5px",
+        height: "5px",
+        backgroundColor: "rgb(0, 0, 0, 0.7)",
+        display: "inline-block",
+        marginRight: "8px",
+        borderRadius: "50%",
+      },
+      ".carousel__dot--selected>span": {
+        backgroundColor: "rgb(0, 0, 0, 1)",
+      },
       ".cover-video": {
         height: { base: "100%", md: "150%" },
         width: { base: "auto", md: "150%" },

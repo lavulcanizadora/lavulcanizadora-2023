@@ -4,11 +4,11 @@ import { Flex, Image, Hide } from "@chakra-ui/react";
 import style from "./style.js";
 import Link from "next/link.js";
 
-const Logo = ({ logoUrl, isHomepage }) => {
+const Logo = ({ logoUrl, isHomepage, isProjectInfo }) => {
 
   return (
     <Flex {...style.container}>
-      <Link href={"/home"} passHref legacyBehavior>
+      <Link href={isProjectInfo ? "/projects" : "/home"} passHref legacyBehavior>
         {isHomepage ? (
           <Image
             src={logoUrl}
@@ -26,6 +26,7 @@ const Logo = ({ logoUrl, isHomepage }) => {
 Logo.propTypes = {
   logoUrl: PropTypes.string.isRequired,
   isHomepage: PropTypes.bool,
+  isProjectInfo: PropTypes.bool
 };
 
 export default Logo;

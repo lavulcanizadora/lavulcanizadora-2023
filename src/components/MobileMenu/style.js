@@ -1,5 +1,6 @@
 const style = {
   menuButton: {
+    display: { md: "none" },
     background: "none",
     position: "fixed",
     zIndex: "1",

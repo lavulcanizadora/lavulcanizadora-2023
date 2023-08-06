@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "@/src/components/Logo";
 import Carousel from "@/src/components/Carousel";
 import PropTypes from "prop-types";
-import { Box, Flex, Heading, Hide } from "@chakra-ui/react";
+import { Box, Flex, Heading, Show } from "@chakra-ui/react";
 import style from "./style";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Head from "next/head";
@@ -18,11 +18,11 @@ const ProjectInfo = ({ logoUrl, projectInfo, globalContent }) => {
         <title>{`${projectInfo.title} | ${globalContent.pageTitle}`}</title>
         <meta name="description" content={globalContent.pageDescription} />
       </Head>
-      <Hide above="md">
+      <Show below="md">
         <MobileMenu />
-      </Hide>
+      </Show>
       <Flex {...style.mainContainer}>
-        <Logo logoUrl={logoUrl} address={globalContent.address} />
+        <Logo logoUrl={logoUrl} address={globalContent.address} isProjectInfo={true} />
         <Flex {...style.infoContainer}>
           <Carousel carouselSlides={projectInfo.carousel} />
           <Flex {...style.infoSpecsContainer}>
@@ -66,10 +66,10 @@ const ProjectInfo = ({ logoUrl, projectInfo, globalContent }) => {
           <AddressParagraph address={globalContent.address} />
         </Flex>
       </Flex>
-      <Hide below="md">
+      <Show above="md">
         <LanguageToggle />
         <DesktopMenu />
-      </Hide>
+      </Show>
     </>
   );
 };

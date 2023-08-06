@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "@/src/components/Logo";
 import PropTypes from "prop-types";
-import { Flex, Hide } from "@chakra-ui/react";
+import { Flex, Show } from "@chakra-ui/react";
 import style from "./style";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -22,9 +22,9 @@ const News = ({ logoUrl, news, globalContent }) => {
         } `}</title>
         <meta name="description" content={globalContent.pageDescription} />
       </Head>
-      <Hide above="md">
+      <Show below="md">
         <MobileMenu />
-      </Hide>
+      </Show>
       <Flex {...style.mainContainer}>
         <Logo logoUrl={logoUrl} address={globalContent.address} />
         <Flex {...style.newsContainer}>
@@ -46,10 +46,10 @@ const News = ({ logoUrl, news, globalContent }) => {
           <AddressParagraph address={globalContent.address} />
         </Flex>
       </Flex>
-      <Hide below="md">
+      <Show above="md">
         <LanguageToggle />
         <DesktopMenu />
-      </Hide>
+      </Show>
     </>
   );
 };

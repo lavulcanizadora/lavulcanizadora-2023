@@ -1,36 +1,65 @@
 import React from "react";
 import PropTypes from "prop-types";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import AutoHeight from "embla-carousel-auto-height";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+  DotGroup,
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
+import { Box, Image } from "@chakra-ui/react";
 import style from "./style";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
-const Carousel = ({ carouselSlides }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
-    Autoplay({ stopOnInteraction: false }),
-    AutoHeight(),
-  ]);
-
+export const Carousel = ({ carouselSlides }) => {
   return (
-    <Box {...style.embla} className="embla">
-      <Box className="embla__viewport" ref={emblaRef}>
-        <Flex className="embla__container" {...style.emblaContainer}>
-          {carouselSlides.map((slide) => (
-            <Image
-              alt=""
-              src={slide.fields.file.url}
-              {...style.emblaSlide}
-              key={slide.fields.file.url}
-              className="embla__slide"
-              onLoad={() => {
-                if (emblaApi) emblaApi.reInit();
-              }}
-            />
-          ))}
-        </Flex>
+    <CarouselProvider
+      totalSlides={carouselSlides.length}
+      naturalSlideHeight={100}
+      naturalSlideWidth={177.8}
+      infinite={true}
+      isPlaying={true}
+      isIntrinsicHeight={true}
+    >
+      <Box position={"relative"}>
+        <Slider>
+          {carouselSlides.map((image, index) => {
+            return (
+              <Slide key={image.fields.file.url} index={index}>
+                <Image
+                  alt=""
+                  src={image.fields.file.url}
+                  width={"100%"}
+                  height={"100%"}
+                  objectFit={"cover"}
+                />
+              </Slide>
+            );
+          })}
+        </Slider>
+        <ButtonBack
+          style={{
+            position: "absolute",
+            top: "calc(50% - 24px)",
+            left: "20px",
+          }}
+        >
+          <FaChevronLeft color="rgb(255, 255, 255, 0.7)" size="24" />
+        </ButtonBack>
+        <ButtonNext
+          style={{
+            position: "absolute",
+            top: "calc(50% - 24px)",
+            right: "20px",
+          }}
+        >
+          <FaChevronRight color="rgb(255, 255, 255, 0.7)" size="24" />
+        </ButtonNext>
+        <DotGroup />
       </Box>
-    </Box>
+    </CarouselProvider>
   );
 };
 
